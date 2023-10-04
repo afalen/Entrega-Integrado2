@@ -1,0 +1,40 @@
+
+    {{#if isAdmin}}
+        <p>Bienvenido  Administrador Coder</p>
+        <p>Email: {{this.email}} Rol: {{this.role}}</p>
+
+        <a href="/logout">LogOut</a>
+
+        <div>
+            {{#each docs}}
+            <div>
+                <p>Nombre: {{this.nombre}} &nbsp; Precio: {{this.precio}}</p>
+                <p>Categoria: {{this.categoria}} &nbsp; Stock: {{this.stock}}</p>
+            </div>
+            <br />
+            {{/each}}
+        </div>
+
+
+
+    {{else}}
+
+        <p>Bienvenido {{this.first_name}} {{this.last_name}}</p>
+        <p>Email: {{this.email}} Edad: {{this.age}} Rol: {{this.role}}</p>
+        <p>Id_Cart: {{this.cart}}</p>
+
+
+        <a href="/logout">LogOut</a>
+
+        <div>
+            {{#each docs}}
+            <div>
+                <p>Nombre: {{this.nombre}} &nbsp; Precio: {{this.precio}}</p>
+                <p>Categoria: {{this.categoria}} &nbsp; Stock: {{this.stock}}</p>
+            </div>
+            <br />
+            {{/each}}
+        </div>
+    {{/if}}
+
+

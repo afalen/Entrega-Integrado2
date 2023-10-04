@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <h3>Los productos del carrito solicitado son:</h3>
+        {{#each products}}
+        <div>
+            <p>Producto: {{this.product}} &nbsp; Cantidad: {{this.quantity}}</p>
+        </div>
+        <br />
+        {{/each}}
+    </div>
+
+</body>
+</html>
