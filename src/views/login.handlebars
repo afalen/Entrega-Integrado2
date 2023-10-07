@@ -1,16 +1,20 @@
-<form action="/api/sessions/login" method="post">
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" required>
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password" required>
-    <button type="submit">Login</button>
-</form>
+<div class="container d-flex flex-column justify-content-between align-items-center gap-2">
+
+    <form action="/api/sessions/login" method="post" class="d-flex flex-column gap-1">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
 
 
-<div>
-    <a href="/api/sessions/register"> <button> Registrarse </button> </a>
-</div>
+    <div>
+        <a href="/api/sessions/register"> <button class="btn btn-primary"> Registrarse </button> </a>
+    </div>
 
-<div>
-    <a href="/api/sessions/github"> <button> Entrar con github </button> </a>
+    <div>
+        <a href="/api/sessions/github"> <button class="btn btn-primary"> Entrar con github </button> </a>
+    </div>
+
 </div>

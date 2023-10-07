@@ -8,11 +8,12 @@
 <body>
 {{#if isValid}}
 <div>
+    <p class="container h3 text-center bg-info"> Lista de productos </p>
     {{#each docs}}
-    <div>
+    <div class="container mt-3 d-flex flex-column align-items-center bg-warning">
         <p>Nombre: {{this.nombre}} &nbsp; Precio: {{this.precio}}</p>
         <p>Categoria: {{this.categoria}} &nbsp; Stock: {{this.stock}}</p>
-        <button>Agregar al carrito</button>
+        <button onclick="addToCart('{{this._id}}')" class="btn btn-primary">Agregar al carrito</button>
     </div>
     <br />
     {{/each}}
@@ -34,5 +35,7 @@
 <h1>No hay productos para mostrar</h1>
 {{/if}}
 
+
+    <script src="/js/products.js"></script>
 </body>
 </html>

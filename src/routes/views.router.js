@@ -18,7 +18,7 @@ router.get('/products', async(req, res)=>{
         result.prevLink = result.hasPrevPage ? `http://localhost:8080/products?page=${result.prevPage}&limit=${result.limit}` : '';
         result.nextLink = result.hasNextPage ? `http://localhost:8080/products?page=${result.nextPage}&limit=${result.limit}` : '';
         result.isValid = !(page <= 0 || page > result.totalPages)
-        
+        //console.log(result)
         res.render('products', result);
     } catch (error) {
         console.error('Error al recuperar productos:', error);
@@ -47,7 +47,7 @@ router.get('/carts/:cid', async(req,res)=>{
 router.get("/profile", async (req, res) => {
     try{
         if (!req.session.user) {
-            return res.redirect("login")
+            return res.redirect("/api/sessions/login")
         }
     
         const { first_name, last_name, email, age, role, cart } = req.session.user

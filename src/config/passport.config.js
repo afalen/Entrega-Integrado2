@@ -4,6 +4,7 @@ const userService = require('../models/user.model')
 const cartService = require('../models/carts.model')
 const { createHash, isValidatePassword } = require('../../utils')
 const GitHubStrategy = require('passport-github2')
+require('dotenv').config()
 
 const LocalStrategy = local.Strategy
 
@@ -55,8 +56,8 @@ const initializePassport = () =>{
 
 
         passport.use('github', new GitHubStrategy({
-            clientID: "Iv1.a0c1d97e64dabc02",
-            clientSecret: "30cf878f087765a15bd047a33e2d87dac4355738",
+            clientID: process.env.ID_CLIENT,
+            clientSecret: process.env.KEY_SECRET_CLIENT,
             callbackURL: "http://localhost:8080/api/sessions/githubcallback"
         }, async (accessToken, refreshToken, profile, done)=>{
             try{

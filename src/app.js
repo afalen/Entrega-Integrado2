@@ -1,5 +1,6 @@
 const express = require('express');
 const session = require('express-session')
+require('dotenv').config()
 const mongoose = require('mongoose')
 const MongoStore = require('connect-mongo')
 const path = require('path')
@@ -30,7 +31,7 @@ app.use(express.static(path.join(__dirname, "/public")))
 
 
 const enviroment = async()=>{
-    await mongoose.connect('mongodb+srv://ecommerceArmandof:falen159@cluster0.yopbtr6.mongodb.net/?retryWrites=true&w=majority')
+    await mongoose.connect(process.env.MONGO_URL)
 
     console.log("Conectado a la base de datos")
 }
@@ -39,11 +40,11 @@ enviroment()
 
 app.use(session({
     store: MongoStore.create({
-        mongoUrl: "mongodb+srv://ecommerceArmandof:falen159@cluster0.yopbtr6.mongodb.net/?retryWrites=true&w=majority",
+        mongoUrl: process.env.MONGO_URL,
         mongoOptions: { useNewUrlParser: true, useUnifiedTopology: true},
         ttl: 1000
     }),
-    secret: "claveSecreta",
+    secret: process.env.KEY_SECRET,
     resave: false,
     saveUninitialized: true
 }))

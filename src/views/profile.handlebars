@@ -1,11 +1,14 @@
 
     {{#if isAdmin}}
-        <p>Bienvenido  Administrador Coder</p>
-        <p>Email: {{this.email}} Rol: {{this.role}}</p>
+        <p class="container h3 text-center bg-info"> Bienvenido  Administrador Coder </p>
+        
+        <div class="container mt-1 pt-1 pb-1 d-flex justify-content-evenly align-items-center gap-2 bg-success">
+            <p>Email: {{this.email}}</p>
+            <p>Rol: {{this.role}}</p>
+            <a href="/logout"> <button class="btn btn-primary"> LogOut </button></a>
+        </div>
 
-        <a href="/logout">LogOut</a>
-
-        <div>
+        <div class="container mt-3 bg-warning">
             {{#each docs}}
             <div>
                 <p>Nombre: {{this.nombre}} &nbsp; Precio: {{this.precio}}</p>
@@ -18,15 +21,18 @@
 
 
     {{else}}
+    <p class="container h3 text-center bg-info">Bienvenido {{this.first_name}} {{this.last_name}}</p>
+    <div class="container mt-1 d-flex justify-content-evenly align-items-center gap-2 bg-success">
 
-        <p>Bienvenido {{this.first_name}} {{this.last_name}}</p>
-        <p>Email: {{this.email}} Edad: {{this.age}} Rol: {{this.role}}</p>
-        <p>Id_Cart: {{this.cart}}</p>
+        <p> <strong> Email: </strong> {{this.email}} </p>
+        <p> <strong> Edad: </strong> {{this.age}} </p>
+        <p> <strong> Rol: </strong> {{this.role}}</p>
+        <p> <strong> Id_Cart: </strong> {{this.cart}}</p>
 
+        <a href="/logout"> <button class="btn btn-primary"> LogOut </button></a>
+    </div>
 
-        <a href="/logout">LogOut</a>
-
-        <div>
+        <div class="container mt-3 bg-warning">
             {{#each docs}}
             <div>
                 <p>Nombre: {{this.nombre}} &nbsp; Precio: {{this.precio}}</p>
